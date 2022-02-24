@@ -21,6 +21,7 @@ window.onload = function () {
   } else {
     setName();
   }
+  document.getElementById("card").classList.add("is-active");
 };
 
 function checkName() {
