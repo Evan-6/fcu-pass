@@ -48,6 +48,7 @@ function setName() {
 }
 
 function resetName() {
+  document.getElementById("card").classList.remove("is-active");
   while (true) {
     let input = window.prompt("請輸入姓名");
     if (input != null && input != "") {
@@ -60,4 +61,5 @@ function resetName() {
   localStorage.setItem("name", newName);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
   window.scrollTo({ top: 0, behavior: "smooth" });
+  document.getElementById("card").classList.add("is-active");
 }
