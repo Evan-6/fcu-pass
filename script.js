@@ -22,7 +22,7 @@ window.onload = function () {
       localStorage.getItem("name") == "Rick" ||
       localStorage.getItem("name") == "rick"
     ) {
-      document.getElementById("dot").className = "rick";
+      rickMode();
     } else {
       document.getElementById("dot").className = "dot";
     }
@@ -54,7 +54,7 @@ function setName() {
   localStorage.setItem("name", name);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
   if (name == "Rick" || name == "rick") {
-    document.getElementById("dot").className = "rick";
+    rickMode();
   } else {
     document.getElementById("dot").className = "dot";
   }
@@ -65,4 +65,10 @@ function resetName() {
   setName();
   window.scrollTo({ top: 0, behavior: "smooth" });
   document.getElementById("card").classList.add("is-active");
+}
+
+function rickMode() {
+  document.getElementById("dot").className = "rick";
+  var audio = new Audio("./audio/rick.m4a");
+  audio.play();
 }
