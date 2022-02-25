@@ -18,6 +18,11 @@ window.onload = function () {
     ("0" + month).slice(-2) + "/" + ("0" + date).slice(-2);
   if (checkName() == true) {
     document.getElementById("name").innerHTML = localStorage.getItem("name");
+    if (localStorage.getItem("name") == "Rick") {
+      document.getElementById("dot").className = "rick";
+    } else {
+      document.getElementById("dot").className = "dot";
+    }
   } else {
     setName();
   }
@@ -45,21 +50,16 @@ function setName() {
   }
   localStorage.setItem("name", name);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
+  if (name == "Rick") {
+    document.getElementById("dot").className = "rick";
+  } else {
+    document.getElementById("dot").className = "dot";
+  }
 }
 
 function resetName() {
   document.getElementById("card").classList.remove("is-active");
-  while (true) {
-    let input = window.prompt("請輸入姓名");
-    if (input != null && input != "") {
-      newName = input;
-      break;
-    } else {
-      window.alert("輸入名稱有誤，請重新輸入");
-    }
-  }
-  localStorage.setItem("name", newName);
-  document.getElementById("name").innerHTML = localStorage.getItem("name");
+  setName();
   window.scrollTo({ top: 0, behavior: "smooth" });
   document.getElementById("card").classList.add("is-active");
 }

@@ -144,3 +144,41 @@ p {
     transform: scale(1);
   }
 }
+
+.rick {
+  height: 240px;
+  width: 240px;
+  border-radius: 50%;
+  display: inline-block;
+  background-image: url("https://image-cdn.hypb.st/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2021%2F08%2Fnever-gonna-give-you-up-passes-one-billion-views-01.jpg?w=960&cbr=1&q=90&fit=max");
+  background-size: cover;
+  background-position: center;
+  animation: spin 6s infinite linear, rick-glow 2s infinite alternate;
+}
+
+@keyframes rick-glow {
+  0% {
+    box-shadow: 0 0 50px 5px rgb(252, 69, 79);
+  }
+  20% {
+    box-shadow: 0 0 50px 5px rgb(225, 101, 0);
+  }
+  40% {
+    box-shadow: 0 0 50px 5px rgb(228, 203, 66);
+  }
+  60% {
+    box-shadow: 0 0 50px 5px rgb(92, 209, 56);
+  }
+  80% {
+    box-shadow: 0 0 50px 5px rgb(69, 215, 252);
+  }
+  100% {
+    box-shadow: 0 0 50px 5px rgb(209, 69, 252);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
