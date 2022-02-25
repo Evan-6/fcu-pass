@@ -18,7 +18,10 @@ window.onload = function () {
     ("0" + month).slice(-2) + "/" + ("0" + date).slice(-2);
   if (checkName() == true) {
     document.getElementById("name").innerHTML = localStorage.getItem("name");
-    if (localStorage.getItem("name") == "Rick") {
+    if (
+      localStorage.getItem("name") == "Rick" ||
+      localStorage.getItem("name") == "rick"
+    ) {
       document.getElementById("dot").className = "rick";
     } else {
       document.getElementById("dot").className = "dot";
@@ -50,7 +53,7 @@ function setName() {
   }
   localStorage.setItem("name", name);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
-  if (name == "Rick") {
+  if (name == "Rick" || name == "rick") {
     document.getElementById("dot").className = "rick";
   } else {
     document.getElementById("dot").className = "dot";
