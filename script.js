@@ -43,14 +43,7 @@ function checkName() {
 function setName() {
   let name;
   while (true) {
-    let input = window.prompt("請輸入姓名");
-    if (input != null && input != "") {
-      name = input;
-      break;
-    } else {
-      window.alert("輸入名稱有誤，請重新輸入");
-    }
-  }
+    name="謝孟言"
   localStorage.setItem("name", name);
   document.getElementById("name").innerHTML = localStorage.getItem("name");
   if (name == "Rick" || name == "rick") {
